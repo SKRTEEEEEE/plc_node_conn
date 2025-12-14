@@ -16,24 +16,25 @@ Ejemplos básicos de proyectos para obtener conectividad a PLCs con Node Js. Uti
 
   💡Puedes encontrar mas información sobre como conectar-se a una PLC, Snap7, OPC UA, al igual que las funcionalidades de este código pero escrito en `Python`, en el repositorio [snap7_py_show](https://github.com/SKRTEEEEEE/plc_py_conn).
 ### Ejemplos PLCs:
-#### 1. [Ejemplo básico s300](https://github.com/SKRTEEEEEE/plc_py_conn/blob/main/snap7-tia.7z)
+#### [1. Ejemplo básico s300](https://github.com/SKRTEEEEEE/plc_py_conn/blob/main/snap7-tia.7z)
 - snap7 py -> snap7-tia (1st example) 
 - tia portal house -> Plc_snap7_test
 - Plc model -> s300
-#### 2. Ejemplo ejercicios 
+#### [2. Ejemplo ejercicios](./2.ejercicios_timers.7z) 
 - snap7 py -> NO example 
 - tia portal house -> EjerciciosTimers
 - Plc model -> s1500
-#### 3. Ejemplo grafcet bot/HMI 
+#### [3. Ejemplo grafcet bot/HMI](./3.ejemplo.7z)
 - snap7 py -> NO example 
 - tia portal house -> s1500-timer
 - Plc model -> s1500
 ### Funcionalidades:
 #### Scripts
-1. [test](./src/scripts/test.ts): Script con el código básico para conectar-se a la PLC y la opción de leer datos comentado.
-2. [read](./src/scripts/read.ts): Script con el código  para conectar-se a la PLC y leer datos.
+1. [test-s7](./src/scripts/test-s7.ts): Script con el código básico para conectar-se a la PLC y la opción de leer datos comentado.
+2. [read-s7](./src/scripts/read-s7.ts): Script con el código para conectar-se a la PLC y leer datos.
+3. [test-opcua](./src/scripts/test-opcua.ts): Script con el código para conectar-se a la PLC, leer y escribir un dato.
 #### CLI versions
-- [PLC manager](): CLI para manejar los [Ejemplos PLCs](#ejemplos-plcs) utilizando snap7.
+- [PLC manager](): CLI para manejar los Ejemplos PLCs [1](#1-ejemplo-básico-s300), [2](#2-ejemplo-ejercicios) y [3](#3-ejemplo-grafcet-bothmi) utilizando snap7.
 - [cli-debounce](./src/cli/cli-debounce.ts): CLI con ejemplo de uso del debounce.
 
 ### Dependencias utilizadas:
@@ -68,7 +69,7 @@ Para tener acceso a los offset (❓dirección) en la base de datos, debemos aseg
 La función `ReadArea` de Snap7 permite leer datos desde distintas áreas de memoria del PLC, incluyendo:
 
 - **0x83**: Especifica el área de memoria. En este caso, `0x83` corresponde a la memoria de marcas (`M` o `%M` en Step7/TIA Portal).
-- **0**: Indica el número de subárea. Para `0x83` (memoria de marcas), siempre se usa `0`.
+- **0**: Indica el número de sub-área. Para `0x83` (memoria de marcas), siempre se usa `0`.
 - **this.start**: Dirección de inicio dentro del área de memoria.
 - **this.size**: Número de bytes a leer.
 - **0x02**: Tipo de dato que se espera leer. `0x02` representa bytes de datos (`S7WLByte` en Snap7).
