@@ -1,0 +1,17 @@
+name: Autotag techs
+
+on:
+  push:
+
+permissions:
+  contents: write
+
+jobs:
+  autotag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: SKRTEEEEEE/autotag-techs@main
+        with:
+          token: ${{ secrets.AUTOTAG_TOKEN }}
+          full: false
